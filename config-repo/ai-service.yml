@@ -1,0 +1,10 @@
+server:
+  port: 8088
+
+huggingface:
+  api-url: https://api-inference.huggingface.co/models/unitary/toxic-bert
+  api-token: ${HUGGINGFACE_API_TOKEN:hf_mock_token_for_local_testing}
+
+spring:
+  cache:
+    type: simple
