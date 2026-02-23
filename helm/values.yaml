@@ -1,0 +1,34 @@
+# Default values for ATLAS chart
+replicaCount:
+  discovery: 1
+  config: 1
+  gateway: 2
+  users: 2
+  posts: 2
+  connections: 2
+  feeds: 2
+  jobs: 2
+  notifications: 2
+  search: 2
+  ai: 2
+  audit: 1
+
+image:
+  repositoryPrefix: "atlas"
+  tag: "latest"
+  pullPolicy: "IfNotPresent"
+
+db:
+  postgresPassword: "postgrespassword"
+  neo4jPassword: "neo4jpassword"
+  mongodbUri: "mongodb://mongodb:27017/atlas_notification"
+  elasticsearchUri: "http://elasticsearch:9200"
+
+kafka:
+  bootstrapServers: "kafka:9092"
+
+jwt:
+  secret: "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437"
+
+huggingface:
+  token: "hf_mock_token_for_local_testing"

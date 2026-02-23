@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+  namespace: {{ .Release.Namespace }}
+data:
+  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://discovery-server:8761/eureka/"
+  SPRING_DATASOURCE_URL_USER: "jdbc:postgresql://postgres:5432/atlas_user"
+  SPRING_DATASOURCE_URL_POST: "jdbc:postgresql://postgres:5432/atlas_post"
+  SPRING_DATASOURCE_URL_JOB: "jdbc:postgresql://postgres:5432/atlas_job"
+  SPRING_DATASOURCE_URL_CONNECTION: "jdbc:postgresql://postgres:5432/atlas_connection"
+  SPRING_NEO4J_URI: "bolt://neo4j:7687"
+  SPRING_DATA_REDIS_HOST: "redis"
+  SPRING_DATA_REDIS_PORT: "6379"
+  SPRING_DATA_MONGODB_URI: "{{ .Values.db.mongodbUri }}"
+  SPRING_ELASTICSEARCH_URIS: "{{ .Values.db.elasticsearchUri }}"
+  SPRING_KAFKA_BOOTSTRAP_SERVERS: "{{ .Values.kafka.bootstrapServers }}"
+  ZIPKIN_TRACING_ENDPOINT: "http://zipkin:9411/api/v2/spans"
+  HUGGINGFACE_API_URL: "https://api-inference.huggingface.co/models/unitary/toxic-bert"
