@@ -1,0 +1,132 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: discovery-server
+spec:
+  ports:
+    - port: 8761
+      targetPort: 8761
+  selector:
+    app: discovery-server
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: config-server
+spec:
+  ports:
+    - port: 8888
+      targetPort: 8888
+  selector:
+    app: config-server
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-gateway
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: api-gateway
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service
+spec:
+  ports:
+    - port: 8081
+      targetPort: 8081
+  selector:
+    app: user-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: post-service
+spec:
+  ports:
+    - port: 8082
+      targetPort: 8082
+  selector:
+    app: post-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: connection-service
+spec:
+  ports:
+    - port: 8083
+      targetPort: 8083
+  selector:
+    app: connection-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: feed-service
+spec:
+  ports:
+    - port: 8084
+      targetPort: 8084
+  selector:
+    app: feed-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: job-service
+spec:
+  ports:
+    - port: 8085
+      targetPort: 8085
+  selector:
+    app: job-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notification-service
+spec:
+  ports:
+    - port: 8086
+      targetPort: 8086
+  selector:
+    app: notification-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: search-service
+spec:
+  ports:
+    - port: 8087
+      targetPort: 8087
+  selector:
+    app: search-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-service
+spec:
+  ports:
+    - port: 8088
+      targetPort: 8088
+  selector:
+    app: ai-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: audit-log-service
+spec:
+  ports:
+    - port: 8089
+      targetPort: 8089
+  selector:
+    app: audit-log-service
